@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - College AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>College AI</h2>
+                <span id="user-name">User</span>
+            </div>
+            <nav>
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/chat" class="nav-link active">Chat</a>
+                <a href="/admin" id="admin-link" class="nav-link hidden">Admin</a>
+                <button id="logout-btn" class="secondary-btn">Logout</button>
+            </nav>
+        </aside>
+
+        <main class="main-content chat-layout">
+            <div class="topbar">
+                <h1>AI Assistant Chat</h1>
+                <button id="new-chat-btn" class="primary-btn">New Chat</button>
+            </div>
+
+            <div class="chat-window">
+                <aside class="session-panel">
+                    <h3>Sessions</h3>
+                    <div id="session-list" class="session-list"></div>
+                </aside>
+
+                <section class="chat-panel">
+                    <div id="chat-messages" class="chat-messages"></div>
+                    <form id="chat-form" class="chat-form">
+                        <input id="chat-input" type="text" placeholder="Ask about admissions, courses, fees, policies..." autocomplete="off">
+                        <button type="submit" class="primary-btn">Send</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
